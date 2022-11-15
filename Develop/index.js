@@ -36,9 +36,10 @@ inquirer
             message: 'How do you test this project?',
         },
         { //license - not finished - need to make it multiple choice
-            type: 'input',
+            type: 'checkbox',
             name: 'license',
-            message: 'Which license',
+            message: 'Which license best suits your project?',
+            choices: ['MPL 2.0', 'GNU', 'Apache', 'MIT', 'None of the above']
         },
         { //github username
             type: 'input',
