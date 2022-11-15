@@ -54,7 +54,14 @@ inquirer
     ])
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) => {
+        if (err) {
+            return console.log(err);
+        }
+        console.log("Great! Take a look at your auto-generated ReadMe!")
+    });
+};
 
 // TODO: Create a function to initialize app
 function init() {}
