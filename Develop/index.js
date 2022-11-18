@@ -1,10 +1,10 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs'); //file system
+const generateMarkdown = require('../utils/generateMarkdown')
 
 // TODO: Create an array of questions for user input
-inquirer
-    .createPromptModule([
+const questions =[
         { //project name
             type: 'input',
             name: 'project-title',
@@ -27,12 +27,12 @@ inquirer
         },
         { //contribution guidelines
             type: 'input',
-            name: 'contribution-guidelines',
+            name: 'contributionGuidelines',
             message: 'How do you contribute to this project?',
         },
         { //test instructions
             type: 'input',
-            name: 'test-instructions',
+            name: 'testInstructions',
             message: 'How do you test this project?',
         },
         { //license - not finished - need to make it multiple choice
@@ -43,7 +43,7 @@ inquirer
         },
         { //github username
             type: 'input',
-            name: 'Github-username',
+            name: 'GithubUsername',
             message: 'What is your github username?',
         },
         { //email address
@@ -51,11 +51,12 @@ inquirer
             name: 'email',
             message: 'What is your email address?',
         },
-    ])
+    ]
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, (err) => {
+    console.log(data)
+    fs.writeFileSync(fileName, data, (err) => {
         if (err) {
             return console.log(err);
         }
@@ -65,7 +66,7 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.createPromptModule(questions)
+    inquirer.prompt(questions)
     .then(function (userInput) {
         console.log(userInput)
         writeToFile("README.md", generateMarkdown(userInput));
