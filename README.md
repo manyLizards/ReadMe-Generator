@@ -17,9 +17,7 @@ run 'node index.js' in the integrated terminal.
 ## Usage
 Answer the questions when prompted and press 'enter' to input each answer.
 
-    ```md
-    ![ReadMe Generator screenshot](assets/images/screenshot.png)
-    ```
+![ReadMe Generator screenshot](./Develop/images/Readme-generator-image.png)
 
 ## Credits
 
