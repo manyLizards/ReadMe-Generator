@@ -18,6 +18,7 @@ run 'node index.js' in the integrated terminal.
 Answer the questions when prompted and press 'enter' to input each answer.
 
 ![ReadMe Generator screenshot](./Develop/images/Readme-generator-image.png)
+![ReadMe Generator Example Video](https://drive.google.com/file/d/196Ev0SBC2M7m60GqU02NwAUdezFeuPk1/view)
 
 ## Credits
 
